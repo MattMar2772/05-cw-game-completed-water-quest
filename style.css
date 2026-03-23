@@ -133,12 +133,9 @@ h1 img {
 
 .water-can-wrapper {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 70px;
-  height: 70px;
-  /* Ensure the wrapper is properly centered */
+  inset: 0;
+  width: 100%;
+  height: 100%;
 }
 
 .water-can {
@@ -181,6 +178,58 @@ button:hover {
   background-color: #1f8fe9;
 }
 
+.difficulty-selection {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.difficulty-prompt {
+  font-size: 20px;
+  font-weight: bold;
+  color: var(--text-main);
+  margin-bottom: 20px;
+}
+
+.difficulty-buttons {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.difficulty-btn {
+  background-color: var(--cw-blue);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.difficulty-btn:hover {
+  background-color: #1f8fe9;
+  transform: scale(1.05);
+}
+
+.difficulty-btn.selected {
+  background-color: var(--cw-green);
+  box-shadow: 0 0 10px rgba(79, 203, 83, 0.5);
+}
+
+.obstacle {
+  width: 100%;
+  height: 100%;
+  background-image: url('img/dirty-water-transparent.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: not-allowed;
+  animation: popUp 0.5s cubic-bezier(0.17, 0.67, 0.34, 2);
+  transform-origin: center;
+}
+
 @media (max-width: 900px) {
   body {
     padding: 20px;
@@ -197,8 +246,8 @@ button:hover {
   }
 
   .water-can-wrapper {
-    width: 62px;
-    height: 62px;
+    width: 100%;
+    height: 100%;
   }
 }
 
@@ -227,6 +276,19 @@ button:hover {
     margin-bottom: 20px;
   }
 
+  .difficulty-prompt {
+    font-size: 18px;
+  }
+
+  .difficulty-buttons {
+    gap: 10px;
+  }
+
+  .difficulty-btn {
+    padding: 10px 16px;
+    font-size: 14px;
+  }
+
   .stats {
     flex-direction: column;
     align-items: center;
@@ -246,8 +308,8 @@ button:hover {
   }
 
   .water-can-wrapper {
-    width: 52px;
-    height: 52px;
+    width: 100%;
+    height: 100%;
   }
 
   button {
@@ -267,7 +329,7 @@ button:hover {
   }
 
   .water-can-wrapper {
-    width: 44px;
-    height: 44px;
+    width: 100%;
+    height: 100%;
   }
 }

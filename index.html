@@ -10,14 +10,27 @@
   <div class="container">
     <h1><img src="img/cw_logo_horizontal.png" alt="Company Logo"></h1>
     <h1>Water Quest</h1>
-    <p class="game-instructions">Collect 20 items to complete the game!</p>
-    <div class="stats">
-      <p>Cans Collected: <span id="current-cans">0</span></p>
-      <p>Time Left: <span id="timer">30s</span></p>
+    
+    <div id="difficulty-selection" class="difficulty-selection">
+      <p class="difficulty-prompt">Select a Difficulty Level:</p>
+      <div class="difficulty-buttons">
+        <button id="difficulty-easy" class="difficulty-btn" data-difficulty="easy">Easy</button>
+        <button id="difficulty-medium" class="difficulty-btn" data-difficulty="medium">Medium</button>
+        <button id="difficulty-hard" class="difficulty-btn" data-difficulty="hard">Hard</button>
+      </div>
     </div>
-    <div id="achievements" class="achievement"></div>
-    <div class="game-grid"></div>
-    <button id="start-game">Start Game</button>
+    
+    <div id="game-container" class="game-container" style="display: none;">
+      <p class="game-instructions" id="game-instructions">Collect 20 items to complete the game!</p>
+      <div class="stats">
+      <p>Cans Collected: <span id="current-cans">0</span></p>
+        <p>Time Left: <span id="timer">30s</span></p>
+      </div>
+      <div id="achievements" class="achievement"></div>
+      <div class="game-grid"></div>
+      <button id="start-game">Start Game</button>
+      <button id="stop-game">Stop Game</button>
+    </div>
   </div>
   <script src="script.js"></script>
 </body>
