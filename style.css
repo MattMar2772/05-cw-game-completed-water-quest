@@ -40,6 +40,9 @@ body {
   font-family: "Avenir", "Proxima Nova", Arial, sans-serif;
   margin: 0;
   padding: 30px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
   background-color: var(--surface-soft);
   color: var(--text-main);
 }
@@ -231,6 +234,45 @@ button:hover {
   transform-origin: center;
 }
 
+.site-footer {
+  max-width: 750px;
+  margin: auto auto 0;
+  text-align: center;
+  padding: 8px 0 0;
+}
+
+.footer-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 10px;
+  color: var(--text-main);
+  font-weight: bold;
+}
+
+.footer-brand img {
+  height: 24px;
+  width: auto;
+  display: block;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.footer-links a {
+  color: var(--cw-blue);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
 @media (max-width: 900px) {
   body {
     padding: 20px;
@@ -288,6 +330,18 @@ button:hover {
   .difficulty-btn {
     padding: 10px 16px;
     font-size: 14px;
+  }
+
+  .site-footer {
+    padding-top: 2px;
+  }
+
+  .footer-links {
+    gap: 10px;
+  }
+
+  .footer-brand img {
+    height: 22px;
   }
 
   .stats {
