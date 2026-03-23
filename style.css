@@ -225,7 +225,8 @@ button:hover {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  cursor: not-allowed;
+  cursor: pointer;
+  border-radius: 50%;
   animation: popUp 0.5s cubic-bezier(0.17, 0.67, 0.34, 2);
   transform-origin: center;
 }

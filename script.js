@@ -13,9 +13,9 @@ const DIFFICULTY_SETTINGS = {
     hasObstacles: false
   },
   hard: {
-    goalCans: 60,
+    goalCans: 50,
     gameDuration: 30,
-    spawnInterval: 500,
+    spawnInterval: 550,
     hasObstacles: true
   }
 };
@@ -157,7 +157,7 @@ function spawnWaterCan() {
   // Spawn an obstacle on hard mode (in a different cell)
   if (HAS_OBSTACLES) {
     const availableCells = Array.from(cells).filter(cell => cell !== randomCell);
-    if (availableCells.length > 0 && Math.random() < 0.4) { // 40% chance to spawn obstacle
+    if (availableCells.length > 0 && Math.random() < 0.6) { // 60% chance to spawn obstacle
       const obstacleCell = availableCells[Math.floor(Math.random() * availableCells.length)];
       obstacleCell.innerHTML = `<div class="obstacle"></div>`;
     }
