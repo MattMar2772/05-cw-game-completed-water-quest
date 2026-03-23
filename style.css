@@ -1,0 +1,273 @@
+/* Charity: water Brand Colors & Fonts
+
+Primary Colors:
+- Yellow:     #FFC907
+- Blue:       #2E9DF7
+
+Secondary Colors:
+- Light Blue: #8BD1CB
+- Green:      #4FCB53
+- Orange:     #FF902A
+- Red:        #F5402C
+- Dark Green: #159A48
+- Pink:       #F16061
+
+Fonts:
+- Proxima Nova
+- Avenir
+
+*/
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --cw-yellow: #FFC907;
+  --cw-blue: #2E9DF7;
+  --cw-light-blue: #8BD1CB;
+  --cw-green: #4FCB53;
+  --cw-orange: #FF902A;
+  --cw-red: #F5402C;
+  --cw-dark-green: #159A48;
+  --cw-pink: #F16061;
+  --text-main: #1a1a1a;
+  --surface: #ffffff;
+  --surface-soft: #f3f8fc;
+}
+
+body {
+  font-family: "Avenir", "Proxima Nova", Arial, sans-serif;
+  margin: 0;
+  padding: 30px;
+  background-color: var(--surface-soft);
+  color: var(--text-main);
+}
+
+.container {
+  max-width: 750px;
+  margin: 50px auto;
+  background-color: var(--surface);
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 8px 24px rgba(46, 157, 247, 0.15);
+}
+
+h1 {
+  font-family: "Proxima Nova", "Avenir", Arial, sans-serif;
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: var(--cw-blue);
+}
+
+h1 img {
+  height: 50px;
+  margin: 0 auto;
+  display: block;
+}
+
+.game-instructions {
+  font-size: 18px;
+  margin-bottom: 30px;
+  text-align: center;
+  color: var(--text-main);
+}
+
+.stats {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 30px;
+  background-color: var(--surface-soft);
+  border: 1px solid rgba(46, 157, 247, 0.2);
+  padding: 15px 0;
+  border-radius: 8px;
+}
+
+.stats p {
+  margin: 0;
+  font-size: 18px;
+  font-weight: bold;
+  color: var(--text-main);
+}
+
+#current-cans,
+#timer {
+  color: var(--cw-blue);
+  transition: color 0.2s ease;
+}
+
+#current-cans.score-positive {
+  color: var(--cw-green);
+}
+
+#current-cans.score-negative {
+  color: var(--cw-red);
+}
+
+#timer.timer-warning {
+  color: var(--cw-red);
+}
+
+.game-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  margin: 0 auto;
+  max-width: 500px;
+}
+
+.grid-cell {
+  background-color: rgba(46, 157, 247, 0.12);
+  border-radius: 8px;
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+
+.water-can-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70px;
+  height: 70px;
+  /* Ensure the wrapper is properly centered */
+}
+
+.water-can {
+  width: 100%;
+  height: 100%;
+  background-image: url('img/water-can.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
+  border-radius: 50%;
+  animation: popUp 0.5s cubic-bezier(0.17, 0.67, 0.34, 2);
+  transform-origin: center; /* Ensure scaling happens from the center */
+}
+
+@keyframes popUp {
+  0% {
+    transform: scale(0.5); /* Start scaling from the center */
+  }
+  100% {
+    transform: scale(1); /* End scaling at full size */
+  }
+}
+
+
+button {
+  background-color: var(--cw-blue);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  display: block;
+  margin: 30px auto 0;
+  transition: background-color 0.2s;
+}
+
+button:hover {
+  background-color: #1f8fe9;
+}
+
+@media (max-width: 900px) {
+  body {
+    padding: 20px;
+  }
+
+  .container {
+    margin: 30px auto;
+    padding: 30px;
+  }
+
+  .game-grid {
+    max-width: 460px;
+    gap: 12px;
+  }
+
+  .water-can-wrapper {
+    width: 62px;
+    height: 62px;
+  }
+}
+
+@media (max-width: 600px) {
+  body {
+    padding: 14px;
+  }
+
+  .container {
+    margin: 16px auto;
+    padding: 22px 16px;
+    border-radius: 8px;
+  }
+
+  h1 {
+    font-size: 26px;
+    margin-bottom: 16px;
+  }
+
+  h1 img {
+    height: 42px;
+  }
+
+  .game-instructions {
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+
+  .stats {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 12px;
+    margin-bottom: 20px;
+  }
+
+  .stats p {
+    font-size: 16px;
+  }
+
+  .game-grid {
+    width: 100%;
+    max-width: 360px;
+    gap: 10px;
+  }
+
+  .water-can-wrapper {
+    width: 52px;
+    height: 52px;
+  }
+
+  button {
+    width: 100%;
+    max-width: 360px;
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 380px) {
+  h1 {
+    font-size: 22px;
+  }
+
+  .game-grid {
+    gap: 8px;
+  }
+
+  .water-can-wrapper {
+    width: 44px;
+    height: 44px;
+  }
+}
